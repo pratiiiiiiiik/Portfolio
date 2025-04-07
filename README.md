@@ -1,65 +1,201 @@
-import { useEffect } from "react";
-import { motion } from "framer-motion";
-import { FaGithub, FaLinkedin, FaEnvelope, FaPhone } from "react-icons/fa";
-import { Progress } from "@/components/ui/progress";
+<!DOCTYPE html>
+<html lang="en">
 
-export default function Portfolio() {
-  useEffect(() => {
-    document.body.classList.add("dark");
-  }, []);
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pratik Gangurde | Cybersecurity Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Roboto Mono', monospace;
+    }
 
-  return (
-    <div className="bg-black text-white min-h-screen flex flex-col items-center p-4">
-      <motion.header initial={{ opacity: 0, y: -50 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 1 }} className="w-full text-center py-6 text-[#39ff14] text-4xl font-extrabold tracking-widest">
-        Pratik Gangurde
-      </motion.header>
-      
-      <motion.section initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 1.2 }} className="text-center my-6">
-        <p className="text-xl font-semibold text-[#00f7ff]">Cybersecurity Enthusiast | Bug Bounty Hunter | VAPT Specialist</p>
-        <p className="text-gray-400">Manmad, Maharashtra, 423104, India</p>
-        <p className="text-gray-400">pratikgangurde2019@gmail.com | 9325569362</p>
-        <div className="flex justify-center gap-6 mt-4">
-          <a href="https://github.com/pratiiiiiiiik" target="_blank" rel="noopener noreferrer"><FaGithub className="text-4xl text-[#39ff14] hover:text-[#00f7ff] transition-all" /></a>
-          <a href="https://linkedin.com/in/pratik" target="_blank" rel="noopener noreferrer"><FaLinkedin className="text-4xl text-[#39ff14] hover:text-[#00f7ff] transition-all" /></a>
-          <a href="mailto:pratikgangurde2019@gmail.com"><FaEnvelope className="text-4xl text-[#39ff14] hover:text-[#00f7ff] transition-all" /></a>
-          <FaPhone className="text-4xl text-[#39ff14] hover:text-[#00f7ff] transition-all" />
-        </div>
-      </motion.section>
-      
-      <motion.section initial={{ x: -100 }} animate={{ x: 0 }} transition={{ duration: 1 }} className="w-full max-w-3xl p-6 bg-gray-900 rounded-lg shadow-lg">
-        <h2 className="text-[#00f7ff] text-2xl font-semibold mb-4">Education</h2>
-        <p>Sanjivani College of Engineering, Kopargaon - B.Tech (IT) (2022-2025) - GPA: 3.12</p>
-        <p>Sanjivani College of Engineering, Kopargaon - Diploma in Mechatronics (2020-2022) - GPA: 3.60</p>
-      </motion.section>
-      
-      <motion.section initial={{ x: 100 }} animate={{ x: 0 }} transition={{ duration: 1 }} className="w-full max-w-3xl p-6 bg-gray-900 rounded-lg shadow-lg mt-6">
-        <h2 className="text-[#00f7ff] text-2xl font-semibold mb-4">Technical Skills</h2>
-        <p className="text-gray-300">Cybersecurity Fundamentals, Security Frameworks, Networking, VAPT, Incident Response, Threat Detection, Linux, OS Security, Wireshark, Metasploit, Burp Suite, Nmap, SIEM, Log Analysis, Malware Detection, NIST, ISO 27001, CIS, Python, Bash Scripting</p>
-      </motion.section>
-      
-      <motion.section initial={{ y: 100 }} animate={{ y: 0 }} transition={{ duration: 1 }} className="w-full max-w-3xl p-6 bg-gray-900 rounded-lg shadow-lg mt-6">
-        <h2 className="text-[#00f7ff] text-2xl font-semibold mb-4">Projects</h2>
-        <ul className="list-disc pl-5 text-gray-300 space-y-2">
-          <li>Key-Driven Image Encryption</li>
-          <li>Caesar Cipher CryptoTool</li>
-          <li>Exploiting Security Weaknesses in Vehicles</li>
-        </ul>
-      </motion.section>
-      
-      <motion.section initial={{ y: 100 }} animate={{ y: 0 }} transition={{ duration: 1 }} className="w-full max-w-3xl p-6 bg-gray-900 rounded-lg shadow-lg mt-6">
-        <h2 className="text-[#00f7ff] text-2xl font-semibold mb-4">Achievements</h2>
-        <ul className="list-disc pl-5 text-gray-300 space-y-2">
-          <li>Master in Cybersecurity and Penetration Testing – Defence Guru Cyber Education Institute</li>
-          <li>CCNA – Defence Guru Cyber Education Institute</li>
-          <li>VAPT – Defence Guru Cyber Education Institute</li>
-          <li>CEH.v13 – Defence Guru Cyber Education Institute</li>
-          <li>Junior Security Analyst – Cisco</li>
-          <li>Fundamentals of SOC (Security Operations Center) – Palo Alto</li>
-          <li>Fundamentals of NOC (Network Operations Center) – Palo Alto</li>
-        </ul>
-      </motion.section>
-      
-      <footer className="text-center py-4 mt-6 text-[#00f7ff] text-lg font-semibold">© 2025 Pratik Gangurde</footer>
-    </div>
-  );
-}
+    body {
+      background-color: #0f0f0f;
+      color: #f5f5f5;
+      line-height: 1.6;
+      scroll-behavior: smooth;
+    }
+
+    header {
+      background-color: #1a1a1a;
+      padding: 2rem;
+      text-align: center;
+      animation: fadeIn 1s ease-in;
+    }
+
+    header h1 {
+      font-size: 2.5rem;
+      color: #00ff9f;
+    }
+
+    header p {
+      color: #ccc;
+      font-size: 1rem;
+      margin-top: 0.5rem;
+    }
+
+    section {
+      padding: 2rem 1rem;
+      border-bottom: 1px solid #222;
+      animation: slideUp 0.8s ease-in;
+    }
+
+    h2 {
+      color: #00ff9f;
+      margin-bottom: 1rem;
+      font-size: 1.5rem;
+    }
+
+    ul, p {
+      margin-left: 1rem;
+      margin-bottom: 1rem;
+      font-size: 1rem;
+    }
+
+    ul li {
+      margin-bottom: 0.5rem;
+    }
+
+    a {
+      color: #00d4ff;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .highlight {
+      color: #ffd700;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    @keyframes slideUp {
+      from { transform: translateY(40px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
+
+    @media screen and (max-width: 768px) {
+      header h1 {
+        font-size: 2rem;
+      }
+
+      header p, section, h2, ul, p {
+        font-size: 0.95rem;
+      }
+
+      section {
+        padding: 1.5rem 1rem;
+      }
+    }
+
+    @media screen and (max-width: 480px) {
+      header h1 {
+        font-size: 1.6rem;
+      }
+
+      header p {
+        font-size: 0.9rem;
+      }
+
+      h2 {
+        font-size: 1.2rem;
+      }
+
+      p, ul li {
+        font-size: 0.9rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <h1>Pratik Gangurde</h1>
+    <p>Cybersecurity Enthusiast | VAPT Specialist | SOC Analyst</p>
+    <p>📍 Manmad, Maharashtra, India</p>
+    <p>📧 <a href="mailto:pratikgangurde2019@gmail.com">pratikgangurde2019@gmail.com</a> | 📞 9325569362</p>
+    <p>🔗 <a href="https://github.com/pratiiiiiiiik" target="_blank">GitHub</a> | <a href="https://linkedin.com/in/pratiiiiiiiik" target="_blank">LinkedIn</a></p>
+  </header>
+
+  <section>
+    <h2>🎓 Education</h2>
+    <p><strong>Bachelor of Technology (Information Technology)</strong></p>
+    <p>Sanjivani College of Engineering, Kopargaon (Jan 2022 – Jun 2025)</p>
+    <p>GPA: 3.12</p>
+    <p><strong>Diploma in Mechatronics</strong></p>
+    <p>Sanjivani College of Engineering, Kopargaon (Jan 2020 – Dec 2022)</p>
+    <p>GPA: 3.60</p>
+  </section>
+
+  <section>
+    <h2>💼 Professional Experience</h2>
+    <p><strong>DFIR Intern – IIMT DFIR</strong> (Jun 2024 – Aug 2024)</p>
+    <ul>
+      <li>Performed digital forensic investigations using tools for disk imaging, memory forensics, and log analysis.</li>
+      <li>Conducted case studies focused on vehicle cybersecurity involving CAN Bus and ECU threats.</li>
+    </ul>
+    <p><strong>SOC Intern – CFSS (Cyber & Forensics Security Solutions)</strong> (Aug 2024 – Sep 2024)</p>
+    <ul>
+      <li>Monitored and analyzed real-time logs using SIEM solutions (Splunk, ELK Stack).</li>
+      <li>Detected anomalies like DNS tunneling, brute force attacks, and port scans.</li>
+    </ul>
+    <p><strong>Cybersecurity Intern – PRASUNET Pvt. Ltd</strong> (Jun 2024 – Jul 2024)</p>
+    <ul>
+      <li>Developed a Python-based password strength checker with GUI using Tkinter.</li>
+      <li>Designed a network scanner and a custom encryption module.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>🧠 Skills</h2>
+    <p><span class="highlight">Functional Skills:</span> Analytical Thinking, Communication, Team Collaboration, Documentation, Reporting, Fluent in English</p>
+    <p><span class="highlight">Technical Skills:</span></p>
+    <ul>
+      <li>Cybersecurity Fundamentals, Security Frameworks (NIST, ISO 27001, CIS)</li>
+      <li>Network & Web Application Penetration Testing (Burp Suite, Nmap, Metasploit)</li>
+      <li>Incident Response, Threat Hunting, Log Analysis (Splunk, ELK, Sysmon)</li>
+      <li>Linux, Windows, SIEM, Wireshark, Malware Detection</li>
+      <li>Programming/Scripting: Python, Bash</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>🛠️ Projects</h2>
+    <ul>
+      <li><strong>Key-Driven Image Encryption</strong>: Designed an image encryption tool manipulating pixel values, ensuring secure transmission with key-based decryption only.</li>
+      <li><strong>Caesar Cipher CryptoTool</strong>: Built a secure messaging app using Caesar Cipher and key validation with randomized keys to prevent brute-force attacks.</li>
+      <li><strong>Vehicle Security Vulnerability Research</strong>: Studied in-vehicle protocols like CAN, LIN, and FlexRay; documented exploitation techniques and proposed security improvements.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>🏆 Achievements & Certifications</h2>
+    <ul>
+      <li>Certified in Cybersecurity & Penetration Testing – Defence Guru Cyber Education Institute</li>
+      <li>Certified Ethical Hacker (CEH.v13) – Defence Guru Cyber Education Institute</li>
+      <li>CCNA – Defence Guru Cyber Education Institute</li>
+      <li>Junior Security Analyst – Cisco</li>
+      <li>Fundamentals of SOC & NOC – Palo Alto Networks</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>📬 Contact</h2>
+    <p><strong>Email:</strong> <a href="mailto:pratikgangurde2019@gmail.com">pratikgangurde2019@gmail.com</a></p>
+    <p><strong>Phone:</strong> 9325569362</p>
+    <p><strong>GitHub:</strong> <a href="https://github.com/pratiiiiiiiik" target="_blank">github.com/pratiiiiiiiik</a></p>
+    <p><strong>LinkedIn:</strong> <a href="https://linkedin.com/in/pratiiiiiiiik" target="_blank">linkedin.com/in/pratiiiiiiiik</a></p>
+  </section>
+</body>
+
+</html>
